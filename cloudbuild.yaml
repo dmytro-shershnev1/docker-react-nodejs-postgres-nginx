@@ -1,0 +1,20 @@
+steps:
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', 'europe-west1-docker.pkg.dev/$PROJECT_ID/app-docker-repo/app-client-image:$SHORT_SHA', './client' ]
+    id: 'Build Client Docker Image'
+
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'europe-west1-docker.pkg.dev/$PROJECT_ID/app-docker-repo/app-client-image:$SHORT_SHA']
+    id: 'Push Client Docker Image'
+
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', 'europe-west1-docker.pkg.dev/$PROJECT_ID/app-docker-repo/app-server-image:$SHORT_SHA', './client' ]
+    id: 'Build Server Docker Image'
+
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'europe-west1-docker.pkg.dev/$PROJECT_ID/app-docker-repo/app-server-image:$SHORT_SHA' ]
+    id: 'Push Server Docker Image'
+
+options:
+  logging: CLOUD_LOGGING_ONLY
+
