@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: server-container
-          image: europe-west1-docker.pkg.dev/$PROJECT_ID/app-docker-repo/app-server-image:$SHORT_SHA
+          image: europe-west1-docker.pkg.dev/app-project-431616/app-docker-repo/app-server-image:$SHORT_SHA
           ports:
             - containerPort: 5000
 
