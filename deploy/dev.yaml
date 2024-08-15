@@ -6,4 +6,4 @@ metadata:
   labels: {}
 description: dev
 gke:
-  cluster: projects/app-project-431616/locations/europe-west1-b/clusters/app-cluster
+  cluster: projects/app-project-431616/locations/europe-west1/clusters/app-cluster
