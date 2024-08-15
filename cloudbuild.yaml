@@ -1,18 +1,18 @@
 steps:
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'europe-west1-docker.pkg.dev/$PROJECT_ID/app-docker-repo/app-client-image:$SHORT_SHA', './client' ]
+    args: ['build', '-t', 'europe-west1-docker.pkg.dev/$PROJECT_ID/app-docker-repo/app-client-image', './client' ]
     id: 'Build Client Docker Image'
 
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'europe-west1-docker.pkg.dev/$PROJECT_ID/app-docker-repo/app-client-image:$SHORT_SHA']
+    args: ['push', 'europe-west1-docker.pkg.dev/$PROJECT_ID/app-docker-repo/app-client-image']
     id: 'Push Client Docker Image'
 
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'europe-west1-docker.pkg.dev/$PROJECT_ID/app-docker-repo/app-server-image:$SHORT_SHA', './client' ]
+    args: ['build', '-t', 'europe-west1-docker.pkg.dev/$PROJECT_ID/app-docker-repo/app-server-image', './client' ]
     id: 'Build Server Docker Image'
 
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'europe-west1-docker.pkg.dev/$PROJECT_ID/app-docker-repo/app-server-image:$SHORT_SHA' ]
+    args: ['push', 'europe-west1-docker.pkg.dev/$PROJECT_ID/app-docker-repo/app-server-image' ]
     id: 'Push Server Docker Image'
 
   - name: 'google/cloud-sdk:latest'

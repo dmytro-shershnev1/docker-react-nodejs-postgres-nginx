@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: client-container
-          image: europe-west1-docker.pkg.dev/app-project-431616/app-docker-repo/app-client-image:$SHORT_SHA
+          image: europe-west1-docker.pkg.dev/app-project-431616/app-docker-repo/app-client-image
           ports:
             - containerPort: 3000
 
